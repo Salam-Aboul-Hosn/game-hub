@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-clients";
 import useData from "./useData";
 import { Genre } from "./useGenres";
 
@@ -22,7 +20,7 @@ const useGames = (
 ) =>
   useData<Game>(
     "/games",
-    { params: { genre: selectedGenre?.id, platforms: selectedPlatform?.id } },
+    { params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id } },
     [selectedGenre?.id, selectedPlatform?.id]
   );
 export default useGames;
